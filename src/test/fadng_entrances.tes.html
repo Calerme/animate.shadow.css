@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bouncing-Entrances Test Page</title>
+  <title>-Entrances Test Page</title>
   <link rel="stylesheet" href="../_base.css">
-  <link rel="stylesheet" href="../bouncing_exits/bounceOut.css">
-  <link rel="stylesheet" href="../bouncing_exits/bounceOutUp.css">
-  <link rel="stylesheet" href="../bouncing_exits/bounceOutRight.css">
-  <link rel="stylesheet" href="../bouncing_exits/bounceOutDown.css">
-  <link rel="stylesheet" href="../bouncing_exits/bounceOutLeft.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeIn.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInUp.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInUpBig.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInRight.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInRightBig.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInDown.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInDownBig.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInLeft.css">
+  <link rel="stylesheet" href="../fading_entrances/fadeInLeftBig.css">
   <style>
     body {
       margin: 0;
@@ -24,7 +28,6 @@
       box-shadow: 0 0 4px 2px skyblue;
       border-radius: 5px;
       white-space: nowrap;
-      animation-fill-mode: none !important;
     }
     .ctrl-wrapper {
       width: min-content;
@@ -37,11 +40,15 @@
   <h1 class="animated">Hello World</h1>
   <div class="ctrl-wrapper">
     <select id="animation-name-control">
-      <option value="bounceOut">bounceOut</option>
-      <option value="bounceOutUp">bounceOutUp</option>
-      <option value="bounceOutRight">bounceOutRight</option>
-      <option value="bounceOutDown">bounceOutDown</option>
-      <option value="bounceOutLeft">bounceOutLeft</option>
+      <option value="fadeIn">fadeIn</option>
+      <option value="fadeInUp">fadeInUp</option>
+      <option value="fadeInUp">fadeInUpBig</option>
+      <option value="fadeInRight">fadeInRight</option>
+      <option value="fadeInRight">fadeInRightBig</option>
+      <option value="fadeInDown">fadeInDown</option>
+      <option value="fadeInDown">fadeInDownBig</option>
+      <option value="fadeInLeft">fadeInLeft</option>
+      <option value="fadeInLeft">fadeInLeftBig</option>
     </select>
     <button>Action</button>
   </div>
