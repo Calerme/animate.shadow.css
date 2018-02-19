@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bouncing-Entrances Test Page</title>
+  <link rel="stylesheet" href="../_base.css">
+  <link rel="stylesheet" href="../flippers/flip.css">
+  <link rel="stylesheet" href="../flippers/flipInX.css">
+  <link rel="stylesheet" href="../flippers/flipInY.css">
+  <link rel="stylesheet" href="../flippers/flipOutX.css">
+  <link rel="stylesheet" href="../flippers/flipOutY.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      width: min-content;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 4px 2px skyblue;
+      border-radius: 5px;
+      white-space: nowrap;
+      animation-fill-mode: backwards;
+    }
+    .ctrl-wrapper {
+      width: min-content;
+      margin: 0 auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animated">Hello World</h1>
+  <div class="ctrl-wrapper">
+    <select id="animation-name-control">
+      <option value="flip">flip</option>
+      <option value="flipInX">flipInX</option>
+      <option value="flipInY">flipInY</option>
+      <option value="flipOutX">flipOutX</option>
+      <option value="flipOutY">flipOutY</option>
+    </select>
+    <button>Action</button>
+  </div>
+
+<script>
+  const h1 = document.querySelector('h1');
+  const btn = document.querySelector('button');
+  const animatNameSelect = document.getElementById('animation-name-control');
+
+  // 1 setTimeout 设为 0 的话，有时会导致无法触发 animation
+  btn.addEventListener('click', function () {
+    const animationName = animatNameSelect.value;
+    h1.className = '';
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      h1.classList.add('animated')
+      h1.classList.add(animationName);
+    }, 10); /* 1 */
+  });
+</script>
+</body>
+</html>
