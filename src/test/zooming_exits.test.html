@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zooming-Exits Test Page</title>
+  <link rel="stylesheet" href="../_base.css">
+  <link rel="stylesheet" href="../zooming_exits/zoomOut.css">
+  <link rel="stylesheet" href="../zooming_exits/zoomOutDown.css">
+  <link rel="stylesheet" href="../zooming_exits/zoomOutLeft.css">
+  <link rel="stylesheet" href="../zooming_exits/zoomOutRight.css">
+  <link rel="stylesheet" href="../zooming_exits/zoomOutUp.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 {
+      width: min-content;
+      padding: 5px;
+      margin-right: auto;
+      margin-left: auto;
+      box-shadow: 0 0 5px 5px skyblue;
+      white-space: nowrap;
+      border-radius: 5px;
+    }
+    .ctrl-wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    #animation-name-control {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animated">Hello World</h1>
+  <div class="ctrl-wrapper">
+    <select id="animation-name-control">
+      <option value="zoomOut">zoomOut</option>
+      <option value="zoomOutDown">zoomOutDown</option>
+      <option value="zoomOutLeft">zoomOutLeft</option>
+      <option value="zoomOutRight">zoomOutRight</option>
+      <option value="zoomOutUp">zoomOutUp</option>
+    </select>
+    <button>Action</button>
+  </div>
+  <script>
+    const h1 = document.querySelector('h1');
+    const btn = document.querySelector('button');
+    const animationNameSelect = document.querySelector('#animation-name-control');
+
+    btn.addEventListener('click', function () {
+      const animationName = animationNameSelect.value;
+
+      h1.className = '';
+      clearTimeout(this.timer);
+      this.timer = setTimeout(function () {
+        h1.classList.add('animated', animationName);
+      }, 10);
+    });
+  </script>
+</body>
+</html>
