@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fading_Exits Test Page</title>
+  <link rel="stylesheet" href="../_base.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOut.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutUp.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutUpBig.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutRight.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutRightBig.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutDown.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutDownBig.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutLeft.css">
+  <link rel="stylesheet" href="../fading_exits/fadeOutLeftBig.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      width: min-content;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 4px 2px skyblue;
+      border-radius: 5px;
+      white-space: nowrap;
+      animation-fill-mode: backwards !important;
+    }
+    .ctrl-wrapper {
+      width: min-content;
+      margin: 0 auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animated">Hello World</h1>
+  <div class="ctrl-wrapper">
+    <select id="animation-name-control">
+      <option value="fadeOut">fadeOut</option>
+      <option value="fadeOutUp">fadeOutUp</option>
+      <option value="fadeOutUp">fadeOutUpBig</option>
+      <option value="fadeOutRight">fadeOutRight</option>
+      <option value="fadeOutRight">fadeOutRightBig</option>
+      <option value="fadeOutDown">fadeOutDown</option>
+      <option value="fadeOutDown">fadeOutDownBig</option>
+      <option value="fadeOutLeft">fadeOutLeft</option>
+      <option value="fadeOutLeft">fadeOutLeftBig</option>
+    </select>
+    <button>Action</button>
+  </div>
+
+<script>
+  const h1 = document.querySelector('h1');
+  const btn = document.querySelector('button');
+  const animatNameSelect = document.getElementById('animation-name-control');
+
+  // 1 setTimeout 设为 0 的话，有时会导致无法触发 animation
+  btn.addEventListener('click', function () {
+    const animationName = animatNameSelect.value;
+    h1.className = '';
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      h1.classList.add('animated')
+      h1.classList.add(animationName);
+    }, 10); /* 1 */
+  });
+</script>
+</body>
+</html>
