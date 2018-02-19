@@ -11,6 +11,10 @@
 
 在不设置`animation-iteration-count `的情况，要想再次触发 animation 动画，需要先移除元素的 `animation-name` 属性，再将 `animation-name` 添加进去，但必须是异步添加：
 
+# transform-origin
+
+定位变换的中心点。
+
 ```js
 // 同步添加的方式不会两次触发 animation 动画
 button.onclick = function () {
